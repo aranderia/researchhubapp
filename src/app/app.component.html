@@ -1,0 +1,57 @@
+<header id="topnav">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="logo">
+          <a [routerLink]="['homepage']">
+            <img src="../assets/images/logo.png">
+            QU<span>Sandbox</span>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-9">
+        <div class="menu clearfix">
+
+          <a [routerLink]="['register']">
+            Register Project
+          </a>
+
+          <a [routerLink]="['homepage']">
+            Home
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="col-sm-8 col-sm-offset-2" style="margin-top: 100px">
+  <router-outlet></router-outlet>
+</div>
+<div style="height: 880px"></div>
+
+<footer >
+  <div class="topFooter">
+    <a href="">Terms & Conditions</a> |
+    <a href="">Privacy Policy</a> |
+    <a href="">Cookie Policy</a>
+  </div>
+  <div class="bottomFooter">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 alignLeft">
+          Designed & Developed by: <a href="http://quantuniversity.com/" target="_blank">QuantUniversity</a>
+        </div>
+        <div class="col-md-4">
+          &copy; QuantUniversity, LLC. All rights reserved.
+        </div>
+        <div class="col-md-4 alignRight">
+          <div class="socialLinks">
+            <a href="https://www.facebook.com/pages/Quantuniversity/941465075911737" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a> |
+            <a href="https://twitter.com/quantuniversity" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a> |
+            <a href="https://www.linkedin.com/company/quantuniversity-llc-" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

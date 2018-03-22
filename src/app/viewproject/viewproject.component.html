@@ -1,0 +1,21 @@
+
+  <h3>{{project.projectName}}</h3>
+  <p><span *ngFor="let author of project.authors">{{author}} </span></p>
+
+
+  <button type="button" class="btn btn-default btn-lg" (click)="goProjectHome()">
+  <span class="glyphicon glyphicon-globe"></span> Project Home
+</button>
+
+  <button type="button" class="btn btn-default btn-lg" (click)="goGithub()"> <i class="fa fa-github"> </i> Github</button>
+  <a style="margin-left: 10px" class="runOnQU" href="http://serverUrl/#/runlab/deep-q-learning1513196511911" target="_blank">
+      <img src="../../assets/images/logo.png">
+      <span class="text-primary">QU</span><span style="color: #10c469">Link</span>
+    </a>
+  <!--<button *ngIf="project.quSandbox" type="submit" class="btn btn-success btn-lg"  >QU</button>-->
+
+
+<p><b>Abstract:</b> {{project.abstract}}</p>
+
+<iframe [src]='sanitizer.bypassSecurityTrustResourceUrl(project.paperLink)' width="100%" height="480"></iframe>
+

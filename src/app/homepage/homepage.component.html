@@ -1,0 +1,19 @@
+<div *ngFor="let project of projectList.projectList" >
+  <button style="margin-left: 1%" title="Delete Project" type="button" class="close" aria-label="Close">
+    <span  class="glyphicon glyphicon-trash"></span>
+  </button>
+  <!--<button style="margin-left: 1%" title="Add new version" type="button" class="close" aria-label="Close">-->
+    <!--<span class="glyphicon glyphicon-plus"></span>-->
+  <!--</button>-->
+  <button title="Edit project" type="button" class="close" aria-label="Close">
+    <span class="glyphicon glyphicon-pencil"></span>
+  </button>
+
+  <h3>{{project.projectName}} </h3>
+
+
+  <p><span *ngFor="let author of project.authors">{{author}} </span></p>
+  <p><b>Abstract:</b> {{project.abstract}}</p>
+  <button type="button" class="btn btn-primary btn-sm" (click)="naviagteToProject(project.projectid)">View Project</button>
+
+</div>

@@ -1,0 +1,110 @@
+<div>
+<form (ngSubmit)="registerProject(projectname.invalid || author.invalid)" #f="ngForm">
+  <div  class="form-group">
+    <label for="projectname">Project Name</label>
+    <input type="text" class="form-control" id="projectname" [(ngModel)]="projectName" name="projectname" #projectname="ngModel" required ngDefaultControl>
+    <div  *ngIf="f.submitted && projectname.invalid "
+         class="alert alert-danger">
+      ProjectName is required
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="projectlink" >Project Link</label>
+    <input type="text" class="form-control" id="projectlink" [(ngModel)]="projectLink" [ngModelOptions]="{standalone: true}">
+  </div>
+  <div class="form-group">
+    <label for="author1">Author 1</label>
+    <input type="text" id="author1" class="form-control" [(ngModel)]="author1" [ngModelOptions]="{standalone: true}" required name="author"
+           #author="ngModel">
+    <div  *ngIf="f.submitted && author.invalid "
+         class="alert alert-danger">
+      Author Name is required
+    </div>
+
+    <button id="a1button" style="margin-left: 1%" title="Add new version" type="button" class="close" aria-label="Close" (click)="addAuthor(2)">
+      <span class="glyphicon glyphicon-plus"></span>
+    </button>
+  </div>
+  <div *ngIf="showSecondAuthor" class="form-group">
+    <label for="authors2">Author 2 </label>
+    <input type="text" class="form-control" id="authors2" [(ngModel)]="author2" [ngModelOptions]="{standalone: true}" >
+    <button style="margin-left: 1%" title="Add new version" type="button" class="close" aria-label="Close" data-toggle="collapse" (click)="removeAuthor()">
+      <span class="glyphicon glyphicon-minus"></span>
+    </button>
+    <button id="a2button" style="margin-left: 1%" title="Add new version" type="button" class="close" aria-label="Close" data-toggle="collapse" (click)="addAuthor(3)">
+      <span class="glyphicon glyphicon-plus"></span>
+    </button>
+  </div>
+  <div *ngIf="showThirdAuthor" class="form-group">
+    <label for="authors2">Author 3 </label>
+    <input type="text" class="form-control" id="authors3" [(ngModel)]="author3" [ngModelOptions]="{standalone: true}" >
+    <button style="margin-left: 1%" title="Add new version" type="button" class="close" aria-label="Close" data-toggle="collapse" (click)="removeAuthor()">
+      <span class="glyphicon glyphicon-minus"></span>
+    </button>
+    <button id="a3button" style="margin-left: 1%" title="Add new version" type="button" class="close" aria-label="Close" data-toggle="collapse" (click)="addAuthor(3)">
+      <span class="glyphicon glyphicon-plus"></span>
+    </button>
+  </div>
+  <!--<div *ngIf="showThirdAuthor" class="form-group">-->
+    <!--<label for="authors3">Author 2 </label>-->
+    <!--<input type="text" class="form-control" id="authors3">-->
+    <!--<button style="margin-left: 1%" title="Add new version" type="button" class="close" aria-label="Close" data-toggle="collapse">-->
+      <!--<span class="glyphicon glyphicon-minus"></span>-->
+    <!--</button>-->
+    <!--<button style="margin-left: 1%" title="Add new version" type="button" class="close" aria-label="Close" data-toggle="collapse">-->
+      <!--<span class="glyphicon glyphicon-plus"></span>-->
+    <!--</button>-->
+  <!--</div>-->
+  <!--<div *ngIf="showFourthAuthor" class="form-group">-->
+    <!--<label for="authors4">Author 2 </label>-->
+    <!--<input type="text" class="form-control" id="authors4">-->
+    <!--<button style="margin-left: 1%" title="Add new version" type="button" class="close" aria-label="Close" data-toggle="collapse">-->
+      <!--<span class="glyphicon glyphicon-minus"></span>-->
+    <!--</button>-->
+    <!--<button style="margin-left: 1%" title="Add new version" type="button" class="close" aria-label="Close" data-toggle="collapse">-->
+      <!--<span class="glyphicon glyphicon-plus"></span>-->
+    <!--</button>-->
+  <!--</div>-->
+  <!--<div *ngIf="showFifthAuthor" class="form-group">-->
+    <!--<label for="authors5">Author 2 </label>-->
+    <!--<input type="text" class="form-control" id="authors5">-->
+    <!--<button style="margin-left: 1%" title="Add new version" type="button" class="close" aria-label="Close" data-toggle="collapse">-->
+      <!--<span class="glyphicon glyphicon-minus"></span>-->
+    <!--</button>-->
+    <!--<button style="margin-left: 1%" title="Add new version" type="button" class="close" aria-label="Close" data-toggle="collapse">-->
+      <!--<span class="glyphicon glyphicon-plus"></span>-->
+    <!--</button>-->
+  <!--</div>-->
+
+  <div class="form-group">
+    <label for="paperlink">Paper Link</label>
+    <input type="text" class="form-control" id="paperlink" [(ngModel)]="paperLink" [ngModelOptions]="{standalone: true}">
+  </div>
+
+  <div class="form-group">
+    <label for="abstract">Abstract</label>
+    <textarea  class="form-control" rows="5" id="abstract" [(ngModel)]="abstract" [ngModelOptions]="{standalone: true}">
+    </textarea>
+  </div>
+  <div class="form-group">
+    <label for="githubLink">Github Link</label>
+    <input type="text" class="form-control" id="githublink" [(ngModel)]="github" [ngModelOptions]="{standalone: true}">
+  </div>
+  <div class="form-group">
+    <label for="dockerhub">Docker Hub Link</label>
+    <input type="text" class="form-control" id="dockerhub" [(ngModel)]="dockerhubLink" [ngModelOptions]="{standalone: true}">
+  </div>
+  <div class="form-group">
+    <label for="ami">AMI Id</label>
+    <input type="text" class="form-control" id="ami" [(ngModel)]="amiid" [ngModelOptions]="{standalone: true}">
+  </div>
+  <div class="form-group">
+    <input type="checkbox" class="form-check-input" id="quSandboxPublish" [(ngModel)]="publishonQuSandbox" [ngModelOptions]="{standalone: true}">
+    <label class="form-check-label" for="quSandboxPublish">Publish on QuSandbox</label>
+  </div>
+  <button type="submit" class="btn btn-success"  >Submit</button>
+</form>
+
+</div>
+
+

@@ -1,0 +1,151 @@
+body {
+  font-family: 'Karla', sans-serif;
+  background-color: #ebeff2;
+  position: relative;
+}
+
+a, a:hover, a:active, a:visited, a:focus {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+footer {
+  border-top: 1px solid rgba(67, 89, 102, 0.1);
+  color: #58666e;
+  text-align: left !important;
+// position: relative;
+// z-index: 1;
+}
+
+.topFooter {
+  padding: 10px 25px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.topFooter a {
+  color: #435966;
+  padding: 0 10px;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.topFooter a:hover {
+  color: #71b6f9 !important;
+}
+
+.bottomFooter {
+  padding: 10px 25px;
+  background-color: #435966;
+  text-align: center;
+  color: #fff;
+}
+
+.bottomFooter a {
+  color: #fff;
+  padding: 0 5px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.bottomFooter a:hover {
+  color: #71b6f9 !important;
+}
+
+
+/* Header */
+#topnav {
+  position: fixed;
+  background-color: #435966;
+  right: 0;
+  left: 0;
+  top: 0;
+  z-index: 4;
+  border: 0;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+  box-shadow: 0 0px 24px 0 rgba(0, 0, 0, 0.06), 0 1px 0px 0 rgba(0, 0, 0, 0.02);
+  padding: 0 25px;
+}
+
+.menu {
+  text-align: right;
+  padding: 28px 50px 28px 0;
+  position: relative;
+}
+
+.menu a {
+  color: #fff;
+  font-size: 17px;
+  line-height: 25px;
+  float: right;
+  padding-right: 8px;
+}
+
+.menu a.logout {
+  font-size: 35px;
+  line-height: 41px;
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  margin-top: -20px;
+  right: 0px;
+  padding-right: 0;
+}
+
+.runOnQU {
+  font-family: "Times New Roman", Serif;
+  color: #fff;
+  font-size: 28px;
+  line-height: 32px;
+
+}
+
+.runOnQU a span {
+  color: #10c469 !important;
+}
+
+.logo {
+  padding: 15px 0;
+}
+
+.logo a {
+  font-family: "Times New Roman", Serif;
+  color: #fff;
+  font-size: 32px;
+  line-height: 32px;
+}
+.logo a span {
+  color: #10c469 !important;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+
+
+/* Media Queries */
+@media(max-width: 1200px) {
+  .logo a {
+    font-size: 30px;
+    line-height: 30px;
+  }
+  .page-title {
+    font-size: 18px;
+  }
+}
+@media(max-width: 1000px) {
+  .bottomFooter {
+    padding: 10px 20px;
+  }
+}
+
+@media(max-width: 992px) {
+  .logo {
+    float: left;
+  }
+  .menu {
+    float: right;
+  }
+}
